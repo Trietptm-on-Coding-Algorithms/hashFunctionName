@@ -40,7 +40,6 @@ unsigned int main(int argc, char** argv){
 		int key = atoi(argv[2]);
 		if(dll != NULL){
 			void * APINames = (void*)((int)getNames(dll, size) + (int)dll);
-			printf("%x\n", APINames);
 			for(int i = 0; i < size; i++){
 				char* name = (char*)(*(int*)((int)APINames+i*4)+(int)dll);
 				printf("%-40s\t%x\n", name, hashName(key,name));
